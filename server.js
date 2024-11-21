@@ -22,8 +22,12 @@ const SOURCES = [
 // CORS configuration
 app.use(
   cors({
-    origin: "https://wandergram1.vercel.app", // Your frontend domain
-    methods: ["GET", "OPTIONS"], // Include OPTIONS for preflight requests
+    origin: [
+      "https://wandergram1.vercel.app", 
+      "http://localhost:5173",  // Add your local development URL
+      "http://localhost:3000"
+    ],
+    methods: ["GET", "OPTIONS"],
     optionsSuccessStatus: 204,
   })
 );
